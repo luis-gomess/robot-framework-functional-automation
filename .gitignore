@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -216,3 +215,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Robot Framework
+results/
+output.xml
+report.html
+log.html
+config/settings.resource
+
+# IDE
+.vscode/
+.idea/
