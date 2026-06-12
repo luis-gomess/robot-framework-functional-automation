@@ -2,9 +2,8 @@
 Resource    ../../steps/main_steps.resource
 
 *** Keywords ***
-
 the user accesses the login screen
-    Access Login Page
+    Access Login Signup Screen
     Validate Login Form Visible
 
 the user tries to login with incorrect credentials
@@ -13,4 +12,3 @@ the user tries to login with incorrect credentials
 
 the incorrect login error message should be visible
     Validate Invalid Login Error Visible
-    

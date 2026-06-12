@@ -221,6 +221,7 @@ results/
 output.xml
 report.html
 log.html
+selenium-screenshot-*.png
 config/settings.resource
 
 # IDE
