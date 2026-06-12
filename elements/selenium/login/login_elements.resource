@@ -3,17 +3,17 @@ Resource    ../../../config/settings.resource
 
 *** Variables ***
 
-&{HOME}
-...    SIGNUP_LOGIN=css:a[href="/login"]
+&{home}
+...    signup_login=css:a[href="/login"]
 
-&{LOGIN}
-...    EMAIL=css:input[data-qa="login-email"]
-...    PASSWORD=css:input[data-qa="login-password"]
-...    BUTTON=css:button[data-qa="login-button"]
-...    INVALID_CREDENTIALS=xpath=//p[contains(.,'Your email or password is incorrect!')]
+&{login}
+...    email=css:input[data-qa="login-email"]
+...    password=css:input[data-qa="login-password"]
+...    button=css:button[data-qa="login-button"]
+...    invalid_credentials=xpath=//p[contains(.,'Your email or password is incorrect!')]
 
-&{SIGNUP}
-...    NAME=css:input[data-qa="signup-name"]
-...    EMAIL=css:input[data-qa="signup-email"]
-...    BUTTON=css:button[data-qa="signup-button"]
-...    EMAIL_ALREADY_EXISTS=xpath=//p[contains(.,'Email Address already exist!')]
+&{signup}
+...    name=css:input[data-qa="signup-name"]
+...    email=css:input[data-qa="signup-email"]
+...    button=css:button[data-qa="signup-button"]
+...    email_already_exists=xpath=//p[contains(.,'Email Address already exist!')]

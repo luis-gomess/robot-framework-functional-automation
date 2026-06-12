@@ -3,7 +3,6 @@
 ${MSG001}    Email Address already exist!
 
 #data
-${random}=    Generate Random String    5    [LOWER]
 ${default_domain}    @email.com
 ${default_password}    Test@123
 ${first_name}    John
