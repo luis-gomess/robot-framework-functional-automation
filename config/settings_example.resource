@@ -5,7 +5,7 @@ Library    Collections
 Library    String
 
 *** Variables ***
-${REMOTE_URL}  http://localhost:8085
+${timeout}    5
 
 &{geral}
 ...     url=https://automationexercise.com/

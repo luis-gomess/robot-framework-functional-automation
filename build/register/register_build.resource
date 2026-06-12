@@ -8,11 +8,10 @@ the user starts the account registration
     Validate Signup Form Visible
 
 the user completes the account registration
-    ${user}=    Generate New User
-    Fill Initial Signup Form    ${user}
+    Generate New User
+    Fill Initial Signup Form
     Submit Initial Signup Form
-    Validate Account Information Form Visible
-    Fill Account Information    ${user}
+    Fill Account Information
     Confirm Account Creation
 
 the account should be created successfully
