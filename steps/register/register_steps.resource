@@ -92,6 +92,16 @@ Validate Logged User Message Visible
     Log    Actual header text: ${logged_user}
     Should Contain    ${logged_user}    ${expected_user}
 
+Delete logged account
+    Wait Until Element Is Visible    ${header.delete_account}    ${timeout}
+    Click Element    ${header.delete_account}
+
+Validate account deleted message visible
+    Wait Until Element Is Visible    ${account.deleted_title}    ${timeout}
+    ${deleted_message}=    Get Text    ${account.deleted_title}
+    Log    Actual deleted account message: ${deleted_message}
+    Should Be Equal    ${deleted_message}    ${MSG005}
+
 Validate Existing Email Error Visible
     Wait Until Element Is Visible    ${signup.email_already_exists}    ${timeout}
     ${error_message}=    Get Text    ${signup.email_already_exists}
