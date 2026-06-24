@@ -4,7 +4,7 @@ Resource    ../../steps/main_steps.resource
 *** Keywords ***
 
 the user starts the account registration
-    Access Login Signup Screen
+    Access login signup screen
     Validate Signup Form Visible
 
 the user completes the account registration

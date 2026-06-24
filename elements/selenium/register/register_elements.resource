@@ -36,3 +36,4 @@ Resource    ../../../config/settings.resource
 ...    create_button=css:button[data-qa="create-account"]
 
 ...    continue_button=css:a[data-qa="continue-button"]
+...    deleted_title=css:h2[data-qa="account-deleted"]
