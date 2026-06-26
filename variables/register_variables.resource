@@ -1,7 +1,6 @@
 *** Variables ***
 #messages
-${MSG001}    Email Address already exist!
-${MSG005}    ACCOUNT DELETED!
+${MSG001_register}    Email Address already exist!
 
 #data
 ${default_domain}    @email.com

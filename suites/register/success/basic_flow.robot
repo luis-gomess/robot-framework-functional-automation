@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../../../build/register/register_build.resource
+Resource    ../../../build/main_build.resource
 Resource    ../../../shared/setup_teardown.resource
 Test Setup     Start Test
 Test Teardown  Finish Test

@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../../steps/main_steps.resource
-Resource    ../main_build.resource
+Resource    ../register/register_build.resource
 
 *** Keywords ***
 the user has a valid registered account
@@ -16,12 +16,6 @@ the user accesses the login screen
 the user tries to login with correct credentials
     Fill login form with correct credentials
     Submit login form
-
-the user deletes the account
-    Delete logged account
-
-the account should be deleted successfully
-    Validate account deleted message visible
 
 the user tries to login with incorrect credentials
     Fill login form with incorrect credentials

@@ -35,4 +35,4 @@ Validate invalid login error visible
     Wait Until Element Is Visible    ${login.invalid_credentials}    ${timeout}
     ${error_message}=    Get Text    ${login.invalid_credentials}
     Log    Actual error message: ${error_message}
-    Should Be Equal    ${error_message}    ${MSG004}
+    Should Be Equal    ${error_message}    ${MSG004_login}
