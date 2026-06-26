@@ -3,50 +3,50 @@ Resource    ../../elements/selenium/main_elements.resource
 Resource    ../../variables/register_variables.resource
 
 *** Keywords ***
-Validate Signup Form Visible
+Validate signup form visible
     Wait Until Page Contains    ${signup_page_title}    ${timeout}
 
-Generate New User
+Generate new user
     ${random}=    Generate Random String    5    [LOWER]
     Set Test Variable    ${default_username}    user${random}
     Set Test Variable    ${default_email}    ${random}${default_domain}
 
-Fill Initial Signup Form
+Fill initial signup form
     Wait Until Element Is Visible    ${signup.name}    ${timeout}
     Input Text    ${signup.name}     ${default_username}
     Wait Until Element Is Visible    ${signup.email}    ${timeout}
     Input Text    ${signup.email}    ${default_email}
 
-Submit Initial Signup Form
+Submit initial signup form
     Wait Until Element Is Visible    ${signup.button}    ${timeout}
     Wait Until Element Is Enabled    ${signup.button}    ${timeout}
     Click Button    ${signup.button}
 
-Select Account Title Mr
+Select account title Mr
     Wait Until Element Is Visible    ${account.title_mr}    ${timeout}
     Click Element    ${account.title_mr}
 
-Fill Account Credentials
+Fill account credentials
     [Arguments]    ${password}
     Input Password    ${account.password}    ${password}
 
-Fill Account Birth Date
+Fill account birth date
     [Arguments]    ${day}    ${month}    ${year}
     Select From List By Value    ${account.day}      ${day}
     Select From List By Value    ${account.month}    ${month}
     Select From List By Value    ${account.year}     ${year}
 
-Select Signup Preferences
+Select signup preferences
     Select Checkbox    ${account.newsletter}
     Select Checkbox    ${account.offers}
 
-Fill Account Personal Data
+Fill account personal data
     [Arguments]    ${first_name}    ${last_name}    ${company}
     Input Text    ${account.first_name}    ${first_name}
     Input Text    ${account.last_name}     ${last_name}
     Input Text    ${account.company}       ${company}
 
-Fill Account Address Data
+Fill account address data
     [Arguments]    ${address1}    ${address2}    ${country}    ${state}    ${city}    ${zipcode}    ${mobile}
     Input Text    ${account.address1}      ${address1}
     Input Text    ${account.address2}      ${address2}
@@ -56,54 +56,46 @@ Fill Account Address Data
     Input Text    ${account.zipcode}       ${zipcode}
     Input Text    ${account.mobile}        ${mobile}
 
-Fill Account Information
-    Select Account Title Mr
-    Fill Account Credentials    ${default_password}
-    Fill Account Birth Date    ${day}    ${month}    ${year}
-    Select Signup Preferences
-    Fill Account Personal Data    ${first_name}    ${last_name}    ${company}
-    Fill Account Address Data    ${address1}    ${address2}    ${country}    ${state}    ${city}    ${zipcode}    ${mobile}
+Fill account information
+    Select account title Mr
+    Fill account credentials    ${default_password}
+    Fill account birth date    ${day}    ${month}    ${year}
+    Select signup preferences
+    Fill account personal data    ${first_name}    ${last_name}    ${company}
+    Fill account address data    ${address1}    ${address2}    ${country}    ${state}    ${city}    ${zipcode}    ${mobile}
 
-Confirm Account Creation
+Confirm account creation
     Wait Until Element Is Visible    ${account.create_button}    ${timeout}
     Wait Until Element Is Enabled    ${account.create_button}    ${timeout}
     Click Button    ${account.create_button}
 
-Validate Account Created Message Visible
+Validate account created message visible
     Wait Until Element Is Visible    ${account.continue_button}    ${timeout}
 
-Continue After Account Creation
-    Go To    ${geral.url}
+Continue after account creation
+    Wait Until Element Is Visible    ${account.continue_button}    ${timeout}
+    Wait Until Element Is Enabled    ${account.continue_button}    ${timeout}
+    Click Element    ${account.continue_button}
 
-Authenticated Header Should Be Visible
+Authenticated header should be visible
     Wait Until Element Is Visible   ${header.logged_user_link}    ${timeout}
     Wait Until Element Is Visible   ${header.logout}    ${timeout}
-    Wait Until Element Is Visible   ${header.delete_account}    ${timeout}
+    Wait Until Element Is Visible   ${delete_account.button}    ${timeout}
 
-Get Logged User Text
+Get logged user text
     ${logged_user}=    Get Text   ${header.logged_user_link}
     RETURN    ${logged_user}
 
-Validate Logged User Message Visible
+Validate logged user message visible
     ${expected_user}=    Set Variable    ${default_username}
-    Authenticated Header Should Be Visible
-    ${logged_user}=    Get Logged User Text
+    Authenticated header should be visible
+    ${logged_user}=    Get logged user text
     Log    Expected user: ${expected_user}
     Log    Actual header text: ${logged_user}
     Should Contain    ${logged_user}    ${expected_user}
 
-Delete logged account
-    Wait Until Element Is Visible    ${header.delete_account}    ${timeout}
-    Click Element    ${header.delete_account}
-
-Validate account deleted message visible
-    Wait Until Element Is Visible    ${account.deleted_title}    ${timeout}
-    ${deleted_message}=    Get Text    ${account.deleted_title}
-    Log    Actual deleted account message: ${deleted_message}
-    Should Be Equal    ${deleted_message}    ${MSG005}
-
-Validate Existing Email Error Visible
+Validate existing email error visible
     Wait Until Element Is Visible    ${signup.email_already_exists}    ${timeout}
     ${error_message}=    Get Text    ${signup.email_already_exists}
     Log    Actual error message: ${error_message}
-    Should Be Equal    ${error_message}    ${MSG001} 
+    Should Be Equal    ${error_message}    ${MSG001_register} 

@@ -277,7 +277,7 @@ Example:
 ```robot
 *** Variables ***
 
-${MSG001}    Email Address already exist!
+${MSG001_register}    Email Address already exist!
 
 ${default_domain}    @email.com
 ${default_password}    Test@123

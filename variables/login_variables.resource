@@ -1,9 +1,9 @@
 *** Variables ***
 #messages
-${MSG001}    Email Address already exist!
-${MSG002}    Invalid email or password!
-${MSG003}    Please enter your email and password!
-${MSG004}    Your email or password is incorrect!
+${MSG001_login}    Email Address already exist!
+${MSG002_login}    Invalid email or password!
+${MSG003_login}    Please enter your email and password!
+${MSG004_login}    Your email or password is incorrect!
 
 #data
 ${email_invalid}    invalid.user@email.com

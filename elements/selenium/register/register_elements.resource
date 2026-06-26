@@ -7,7 +7,6 @@ Resource    ../../../config/settings.resource
 ...    logged_user=css:a[href="/delete_account"] > i.fa-user
 ...    logged_user_link=xpath=//a[contains(.,'Logged in as')]
 ...    logout=css:a[href="/logout"]
-...    delete_account=css:a[href="/delete_account"]
 
 &{account}
 ...    title_mr=id:id_gender1
@@ -36,4 +35,3 @@ Resource    ../../../config/settings.resource
 ...    create_button=css:button[data-qa="create-account"]
 
 ...    continue_button=css:a[data-qa="continue-button"]
-...    deleted_title=css:h2[data-qa="account-deleted"]

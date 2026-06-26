@@ -5,18 +5,18 @@ Resource    ../../steps/main_steps.resource
 
 the user starts the account registration
     Access login signup screen
-    Validate Signup Form Visible
+    Validate signup form visible
 
 the user completes the account registration
-    Generate New User
-    Fill Initial Signup Form
-    Submit Initial Signup Form
-    Fill Account Information
-    Confirm Account Creation
+    Generate new user
+    Fill initial signup form
+    Submit initial signup form
+    Fill account information
+    Confirm account creation
 
 the account should be created successfully
-    Validate Account Created Message Visible
-    Continue After Account Creation
+    Validate account created message visible
+    Continue after account creation
 
 the user should be authenticated
-    Validate Logged User Message Visible
+    Validate logged user message visible
