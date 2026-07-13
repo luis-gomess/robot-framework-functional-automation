@@ -20,3 +20,10 @@ the account should be created successfully
 
 the user should be authenticated
     Validate logged user message visible
+
+the user tries to register with an existing email
+    Fill initial signup form
+    Submit initial signup form
+
+the existing email error message should be visible
+    Validate existing email error visible
