@@ -5,3 +5,4 @@ Resource    delete_account/delete_account_build.resource
 Resource    contact_us/contact_us_build.resource
 Resource    test_cases/test_cases_build.resource
 Resource    products/products_build.resource
+Resource    home/home_build.resource

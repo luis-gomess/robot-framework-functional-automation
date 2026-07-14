@@ -15,3 +15,7 @@ Resource    ../../../config/settings.resource
 ...    availability=xpath=//div[contains(@class,'product-information')]/p[starts-with(normalize-space(.),'Availability:')]
 ...    condition=xpath=//div[contains(@class,'product-information')]/p[starts-with(normalize-space(.),'Condition:')]
 ...    brand=xpath=//div[contains(@class,'product-information')]/p[starts-with(normalize-space(.),'Brand:')]
+...    search_input=css:input#search_product
+...    search_button=css:button#submit_search
+...    searched_products_title=xpath=//h2[normalize-space(.)='Searched Products']
+...    searched_product_names=css:.features_items .product-image-wrapper .productinfo p
