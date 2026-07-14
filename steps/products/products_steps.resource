@@ -1,5 +1,6 @@
 *** Settings ***
 Resource    ../../elements/selenium/main_elements.resource
+Resource    ../../variables/products_variables.resource
 
 *** Keywords ***
 Access products screen
@@ -44,3 +45,31 @@ Validate product details visible
     ${brand}=    Get Text    ${products.brand}
     Should Contain    ${brand}    Brand:
     Should Not Be Empty    ${brand}
+
+Search products by name
+    [Arguments]    ${search_term}
+    Wait Until Element Is Visible    ${products.search_input}    ${timeout}
+    Input Text    ${products.search_input}    ${search_term}
+    Wait Until Element Is Visible    ${products.search_button}    ${timeout}
+    Wait Until Element Is Enabled    ${products.search_button}    ${timeout}
+    Scroll Element Into View    ${products.search_button}
+    Click Button    ${products.search_button}
+
+Validate searched products for term
+    [Arguments]    ${search_term}
+    Wait Until Element Is Visible    ${products.searched_products_title}    ${timeout}
+    Wait Until Element Is Visible    ${products.searched_product_names}    ${timeout}
+
+    ${product_elements}=    Get WebElements    ${products.searched_product_names}
+    ${products_count}=    Get Length    ${product_elements}
+    Should Be True    ${products_count} > 0
+
+    ${normalized_search_term}=    Convert To Lower Case    ${search_term}
+
+    FOR    ${product_element}    IN    @{product_elements}
+        Element Should Be Visible    ${product_element}
+        ${product_name}=    Get Text    ${product_element}
+        Should Not Be Empty    ${product_name}
+        ${normalized_product_name}=    Convert To Lower Case    ${product_name}
+        Should Contain    ${normalized_product_name}    ${normalized_search_term}
+    END
