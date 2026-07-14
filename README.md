@@ -29,7 +29,7 @@ The automation was designed around a functional layered architecture focused on:
 
 ## Test Case Source
 
-The project is based on the **26 test cases** provided by Automation Exercise.
+The project is based on the **first 10 test cases** out of the 26 provided by Automation Exercise.
 
 Instead of keeping all scenarios in a flat structure, the tests are organized by domain and scenario type.
 

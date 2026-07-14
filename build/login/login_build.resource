@@ -23,3 +23,9 @@ the user tries to login with incorrect credentials
 
 the incorrect login error message should be visible
     Validate invalid login error visible
+
+the user logs out from account
+    Log out from account
+
+the user should be redirected to the login screen
+    Validate login form visible
